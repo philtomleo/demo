@@ -1,0 +1,424 @@
+/* 網站整體 */
+
+@import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-weight: 400;
+    font-family: "Noto Sans TC", "Noto Sans", "微軟正黑體";
+    line-height: 1.75;
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 1em;
+    margin-bottom: .6em;
+    font-weight: 600;
+    font-family: "Noto Sans TC", 'Noto Sans', '微軟正黑體';
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.7rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+h6 {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+pre {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a,
+a:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: .1s linear;
+    transition: .1s linear;
+}
+
+/* 通用元件 */
+
+.pic_svg_width {
+    max-width: 100%;
+    height: auto;
+}
+
+.section_title,
+.section_title_features {
+    position: relative;
+    width: 100%;
+    padding: .5rem 70px;
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media only screen and (max-width:575.98px) {
+
+    .section_title_features {
+        padding: .5rem 50px;
+    }
+}
+
+.btn_more {
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    background: #007de8;
+    border-radius: 0.5rem;
+    -webkit-transition: all .1s;
+    transition: all .1s;
+}
+
+.btn_more:hover {
+    color: black;
+    background: #ffd800;
+}
+
+.text_softgray {
+    color: gray;
+    font-size: .85rem;
+}
+
+/* 平台導覽列 */
+
+#platform_nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    padding: 0 1.45rem 0 2rem;
+    background: white;
+    color: black;
+    font-size: 1.35rem;
+    font-weight: 450;
+    -webkit-transition: all .1s linear;
+    transition: all .1s linear;
+}
+
+#platform_logo {
+    width: 135px;
+}
+
+#platform_menu_desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+.platform_menu_item {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 1rem;
+}
+
+.line_animate::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    border-radius: 5px;
+    background: #0364b8;
+    content: "";
+    -webkit-transition: all .15s linear;
+    transition: all .15s linear;
+    -webkit-transform: scaleX(1) translateX(-50%);
+    transform: scaleX(1) translateX(-50%);
+}
+
+.line_animate:hover,
+.line_animate:active {
+    color: #0364b8;
+    -webkit-transition: 0.15s ease;
+    transition: 0.15s ease;
+}
+
+.line_animate:hover::after {
+    width: 80%;
+}
+
+#platform_menu_mobile {
+    display: none;
+}
+
+@media only screen and (max-width:991.98px) {
+
+    #platform_nav {
+        padding: 0 .95rem 0 1.5rem;
+    }
+}
+
+@media only screen and (max-width:767.98px) {
+
+    #platform_menu_desktop,
+    .line_animate::after {
+        display: none;
+    }
+
+    #platform_nav {
+        padding: 0 .45rem 0 1rem;
+        font-size: 1.2rem;
+    }
+
+    #platform_menu_mobile {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        color: black;
+    }
+
+    .platform_menu_item {
+        position: relative;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 .75rem;
+    }
+
+}
+
+/* 遊戲導覽列 */
+
+#game_nav {
+    width: 100%;
+}
+
+#game_nav_desktop {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    margin: 0;
+    padding: 0 25px 0 0;
+    list-style: none;
+    z-index: 5;
+}
+
+.game_menu_item {
+    padding: .5rem;
+}
+
+.game_menu_item:hover,
+.game_menu_item:focus {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+#game_nav_mobile {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    width: 65px;
+    z-index: 5;
+}
+
+#menu_open {
+    cursor: pointer;
+}
+
+#game_nav_mobile_list {
+    display: none;
+    position: relative;
+    top: 10px;
+    right: 6px;
+    width: 80px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@media only screen and (max-width:991.98px) {
+
+    #game_nav_desktop {
+        display: none;
+    }
+
+}
+
+/* 回到頂端 */
+
+#back_to_top {
+    display: none;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 100px;
+    z-index: 5;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:991.98px) {
+
+    #back_to_top {
+        right: 10px;
+        bottom: 10px;
+        width: 70px;
+    }
+}
+
+/* 頁尾 */
+
+#footer_area {
+    position: relative;
+    width: 100%;
+    z-index: 0;
+}
+
+/* 版權資訊 */
+
+#platform_link {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: .5rem 1rem;
+    background: white;
+    color: black;
+}
+
+.company_logo {
+    width: 200px;
+    margin-left: auto;
+}
+
+.company_info {
+    margin-left: 1rem;
+    margin-right: auto;
+}
+
+.outlink {
+    font-size: .9rem;
+    text-align: center;
+    padding-bottom: .25rem;
+}
+
+.outlink a:nth-child(2n) {
+    margin: 0 5%;
+}
+
+.outlink a:hover {
+    color: #e80012;
+}
+
+.copyright {
+    font-size: .8rem;
+}
+
+@media only screen and (max-width:575.98px) {
+
+    #platform_link {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: .5rem;
+    }
+
+    .company_logo {
+        width: 170px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .company_info {
+        width: 100%;
+        margin-top: 1rem;
+        margin-left: auto;
+    }
+
+    .outlink,
+    .copyright {
+        text-align: center;
+    }
+}
